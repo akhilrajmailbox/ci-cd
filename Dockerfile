@@ -2,7 +2,7 @@ from akhilrajmailbox/ubuntu:16.04
 maintainer Akhil Raj <akhilrajmailbox@gmail.com>
 
 run apt-get update && apt-get upgrade -y \
-        && apt-get install -y nano apt-utils net-tools dnsutils wget unzip \
+        && apt-get install -y nano apt-utils net-tools dnsutils wget unzip openssh-server openssh-client \
         software-properties-common \
         --no-install-recommends \
         && add-apt-repository ppa:webupd8team/java -y \
