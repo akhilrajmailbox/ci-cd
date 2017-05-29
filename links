@@ -1,3 +1,13 @@
 docker jenkins >>
 
 docker pull akhilrajmailbox/jenkins:latest
+
+
+error message >>
+https://issues.jenkins-ci.org/browse/JENKINS-12875
+
+ci-cd jenkins with gitLab >>
+https://docs.bitnami.com/bch/how-to/create-ci-pipeline/
+
+gradle plugin for jenkins >>
+https://wiki.jenkins-ci.org/display/JENKINS/Gradle+Plugin
