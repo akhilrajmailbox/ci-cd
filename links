@@ -11,3 +11,10 @@ https://docs.bitnami.com/bch/how-to/create-ci-pipeline/
 
 gradle plugin for jenkins >>
 https://wiki.jenkins-ci.org/display/JENKINS/Gradle+Plugin
+
+
+multi-user-cred >> (role based strategy)
+
+https://stackoverflow.com/questions/8323129/jenkins-restrict-view-of-jobs-per-user
+
+http://www.kblearningacademy.com/configure-role-strategy-plugin-in-jenkins/
