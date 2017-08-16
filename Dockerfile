@@ -2,7 +2,7 @@ from akhilrajmailbox/ubuntu:16.04
 maintainer Akhil Raj <akhilrajmailbox@gmail.com>
 
 run apt-get update && apt-get upgrade -y \
-        && apt-get install -y nano apt-utils net-tools dnsutils wget unzip openssh-server openssh-client git \
+        && apt-get install -y nano apt-utils net-tools dnsutils curl wget zip unzip openssh-server openssh-client git sudo \
         software-properties-common \
         --no-install-recommends \
         && add-apt-repository ppa:webupd8team/java -y \
@@ -14,6 +14,9 @@ run apt-get update && apt-get upgrade -y \
         && apt-get install oracle-java8-installer -y \
         --no-install-recommends \
         && apt install oracle-java8-set-default
+
+run sh -c "curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -"
+run apt-get install nodejs -y
 
 run wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | apt-key add - \
         && sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
