@@ -1,0 +1,32 @@
+*********************************************************************************
+links ::
+*********************************************************************************
+
+basics >>
+https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes
+
+installation >>
+https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
+
+dashboard >>
+https://kubernetes-v1-4.github.io/docs/user-guide/ui/
+
+pods & service >>
+https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/pods_and_services.html
+
+yaml & json file creation >>
+https://kubernetes-v1-4.github.io/docs/user-guide/pods/multi-container/
+https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/
+
+memoru limit :
+https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/
+
+cpu limit :
+https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/
+
+volume options :
+https://kubernetes.io/docs/concepts/storage/volumes/
+
+error-solution (incompatibility of versions of docker and kubernets) >>
+http://stackoverflow.com/questions/39005388/fail-to-run-docker-on-kubernetes
+

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html style="overflow-y: scroll"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" src="3.installation-kubernetes%28multi-nodes%29_files/3b2416df04"></script><script src="3.installation-kubernetes%28multi-nodes%29_files/nr-998.js"></script><script type="text/javascript" async="" src="3.installation-kubernetes%28multi-nodes%29_files/munchkin.js"></script><script async="" src="3.installation-kubernetes%28multi-nodes%29_files/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"3b2416df04","agent":"","transactionName":"YlBQYxZWWURRVxcKClsadEIKVENeX1pMFxBBWkBeBVtEGUZdBhQWD2FHQwtFXlZccAYXBFxZZF4BQA==","applicationID":"6933534","errorBeacon":"bam.nr-data.net","applicationTime":282}</script>
+	
+    <link rel="shortcut icon" href="https://devops.profitbricks.com/static/img/pb-favicon.ico" type="image/x-icon">
+
+    <!-- <title>Developer Portal</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <link rel="stylesheet" type="text/css" href="3.installation-kubernetes%28multi-nodes%29_files/bootstrap-markdown.css">
+    <link rel="stylesheet" type="text/css" href="3.installation-kubernetes%28multi-nodes%29_files/bootstrap.css">
+    <link href="3.installation-kubernetes%28multi-nodes%29_files/font-awesome.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    
+    <title>Getting Started with a Multi-node Kubernetes Cluster on Ubuntu | ProfitBricks DevOps Central</title>
+    <meta name="description" content="Getting Started with a Multi-node Kubernetes Cluster on Ubuntu - learn more at the ProfitBricks DevOps Central Community">
+    <meta name="keywords" content="Docker, Kubernetes, Ubuntu">
+    <meta name="category" content="Tutorials">
+    <meta name="author" content="baldwin">
+    <meta name="created" content="2015-02-18T22:36:18.339000">
+    
+    <meta description="og:title" content="Getting Started with a Multi-node Kubernetes Cluster on Ubuntu | ProfitBricks">
+    <meta description="og:description" content="Getting Started with a Multi-node Kubernetes Cluster on Ubuntu - learn more at the ProfitBricks DevOps Central Community">
+    <meta description="og:site_name" content="ProfitBricks">
+    <meta description="og:type" content="article">
+    <meta description="og:image" content="https://devops.profitbricks.com/static/img/profitbricks-200px.png">
+    
+    <meta name="twitter:domain" content="ProfitBricks">
+    <meta name="twitter:creator" content="@ProfitBricksUSA">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@profitbricks">
+    <meta name="twitter:title" content="Getting Started with a Multi-node Kubernetes Cluster on Ubuntu">
+    <meta name="twitter:description" content="Getting Started with a Multi-node Kubernetes Cluster on Ubuntu">
+    <meta name="twitter:image" content="https://devops.profitbricks.com/static/img/twitter-card-profitbricks.jpg">
+
+
+    <link href="3.installation-kubernetes%28multi-nodes%29_files/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    
+
+
+  <link rel="stylesheet" href="3.installation-kubernetes%28multi-nodes%29_files/entypo.css"><link rel="stylesheet" href="3.installation-kubernetes%28multi-nodes%29_files/css.css"><style type="text/css">.share-button.sharer-0{width:92px;height:20px;-webkit-touch-callout:none;-khtml-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.share-button.sharer-0 [class*=entypo-]:before{font-family:entypo,sans-serif}.share-button.sharer-0 label{font-size:16px;cursor:pointer;margin:0;padding:5px 10px;border-radius:5px;background:#a29baa;color:#333;-webkit-transition:all .3s ease;transition:all .3s ease}.share-button.sharer-0 label:hover{opacity:.8}.share-button.sharer-0 label span{text-transform:uppercase;font-size:.9em;-webkit-font-smoothing:antialiased;padding-left:6px}.share-button.sharer-0 .social{opacity:0;-webkit-transition:all .4s ease;transition:all .4s ease;margin-left:-15px;visibility:hidden}.share-button.sharer-0 .social.top{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;margin-top:-65px}.share-button.sharer-0 .social.bottom{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;margin-top:5px}.share-button.sharer-0 .social.middle{margin-top:-34px}.share-button.sharer-0 .social.middle.right{-webkit-transform-origin:5% 50%;-ms-transform-origin:5% 50%;transform-origin:5% 50%;margin-left:105px}.share-button.sharer-0 .social.middle.left{-webkit-transform-origin:5% 50%;-ms-transform-origin:5% 50%;transform-origin:5% 50%}.share-button.sharer-0 .social.right{margin-left:14px}.share-button.sharer-0 .social.load{-webkit-transition:none!important;transition:none!important}.share-button.sharer-0 .social.networks-1{width:60px}.share-button.sharer-0 .social.networks-1.center,.share-button.sharer-0 .social.networks-1.left{margin-left:14px}.share-button.sharer-0 .social.networks-1.middle.left{margin-left:-70px}.share-button.sharer-0 .social.networks-1 ul{width:60px}.share-button.sharer-0 .social.networks-2{width:120px}.share-button.sharer-0 .social.networks-2.center{margin-left:0px}.share-button.sharer-0 .social.networks-2.left{margin-left:-44px}.share-button.sharer-0 .social.networks-2.middle.left{margin-left:-130px}.share-button.sharer-0 .social.networks-2 ul{width:120px}.share-button.sharer-0 .social.networks-3{width:180px}.share-button.sharer-0 .social.networks-3.center{margin-left:-25px}.share-button.sharer-0 .social.networks-3.left{margin-left:-102px}.share-button.sharer-0 .social.networks-3.middle.left{margin-left:-190px}.share-button.sharer-0 .social.networks-3 ul{width:180px}.share-button.sharer-0 .social.networks-4{width:240px}.share-button.sharer-0 .social.networks-4.center{margin-left:-25px}.share-button.sharer-0 .social.networks-4.left{margin-left:162px}.share-button.sharer-0 .social.networks-4.middle.left{margin-left:-232px;margin-top:-40px;}.share-button.sharer-0 .social.networks-4 ul{width:240px}.share-button.sharer-0 .social.networks-5{width:300px}.share-button.sharer-0 .social.networks-5.center{margin-left:-105px}.share-button.sharer-0 .social.networks-5.left{margin-left:-225px}.share-button.sharer-0 .social.networks-5.middle.left{margin-left:-320px}.share-button.sharer-0 .social.networks-5 ul{width:300px}.share-button.sharer-0 .social.active{opacity:1;-webkit-transition:all .4s ease;transition:all .4s ease;visibility:visible}.share-button.sharer-0 .social.active.top{-webkit-transform:scale(1) translateY(-10px);-ms-transform:scale(1) translateY(-10px);transform:scale(1) translateY(-10px)}.share-button.sharer-0 .social.active.bottom{-webkit-transform:scale(1) translateY(15px);-ms-transform:scale(1) translateY(15px);transform:scale(1) translateY(15px)}.share-button.sharer-0 .social.active.middle.right{-webkit-transform:scale(1) translateX(10px);-ms-transform:scale(1) translateX(10px);transform:scale(1) translateX(10px)}.share-button.sharer-0 .social.active.middle.left{-webkit-transform:scale(1) translateX(-10px);-ms-transform:scale(1) translateX(-10px);transform:scale(1) translateX(-10px)}.share-button.sharer-0 .social ul{position:relative;left:0;right:0;height:46px;color:#fff;margin:auto;padding:0;list-style:none}.share-button.sharer-0 .social ul li{font-size:20px;cursor:pointer;width:60px;margin:0;padding:12px 0;text-align:center;float:left;display:none;height:22px;position:relative;z-index:2;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-transition:all .3s ease;transition:all .3s ease}.share-button.sharer-0 .social ul li:hover{color:rgba(0,0,0,.5)}.share-button.sharer-0 .social li[class*=facebook]{background:#3b5998;display:block}.share-button.sharer-0 .social li[class*=twitter]{background:#6cdfea;display:block}.share-button.sharer-0 .social li[class*=gplus]{background:#e34429;display:block}.share-button.sharer-0 .social li[class*=pinterest]{background:#c5282f;display:none}.share-button.sharer-0 .social li[class*=paper-plane]{background:#42c5b0;display:block}</style><meta name="sharer.share-button.sharer-0"></head>
+<body data-spy="scroll" data-target=".nav-sidebar">
+    <nav class="navbar navbar-default" role="navigation" data-offset-top="70" style="margin-top: -80px">
+    <div class="container"> 
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://devops.profitbricks.com/"><img src="3.installation-kubernetes%28multi-nodes%29_files/logo-pb.png" alt="Home" title="ProfitBricks Developer Center Home"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav pb-nav-left">
+            <li><a href="https://devops.profitbricks.com/community/" id="community-nav" title="Questions and Answers From The Community">Community</a></li>
+            <li><a href="https://devops.profitbricks.com/tutorials/" id="tutorials-nav" class="active">Tutorials</a></li>
+            <li><a href="https://devops.profitbricks.com/api/" id="api-nav">API</a></li>
+            <li><a href="https://devops.profitbricks.com/tools/" id="libraries-nav">Tools</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right pb-nav-right">
+          <!-- start SEARCH -->
+          <div class="navbar-form navbar-left">
+          <form role="search" accept-charset="UTF-8" action="/search/" method="get">
+              <div class="search_group input-group input-group-lg">
+                
+                  <input autocomplete="off" class="form-control" placeholder="Search" name="q" id="search" data-original-title="" title="" type="text">
+                
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+              </div> <!-- /input-group -->
+          </form>
+          </div>
+            
+              <li><a href="https://devops.profitbricks.com/users/login/?next=/tutorials/getting-started-with-a-multi-node-kubernetes-cluster-on-ubuntu/" class="btn btn-default btn-lg" title="Log In">Login <i class="fa fa-sign-in"></i></a></li>
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div> <!-- /container -->
+    </nav>
+  
+  
+
+  <div id="page_content" class="container">
+  <div class="row">
+  <div class="col-md-12">
+    
+
+
+    
+
+
+
+
+
+<!-- TUTORIAL TITLE -->
+<!-- break out of the layout -->
+  </div> <!-- /content-header -->
+</div> <!-- /row -->
+</div> <!-- /container -->
+
+<!-- title banner -->
+<section class="fluid-container">
+<div class="row floating-title affix-top" data-spy="affix" data-offset-top="75">
+  <div class="col-md-12">
+  <!-- title goes here: -->
+  <section class="container">
+    <div class="row">
+      <div class="col-md-1 hidden-xs hidden-sm text-right">
+        <a href="https://devops.profitbricks.com/tutorials/" title="Tutorials list"><img src="3.installation-kubernetes%28multi-nodes%29_files/ProfitBricks_logo_white.png" id="floating-logo" style="display: none;"></a>
+      </div>
+
+      <div class="col-xs-12 col-md-11" id="floating-heading">
+        <h1>Getting Started with a Multi-node Kubernetes Cluster on Ubuntu</h1>
+      </div> <!-- /col -->
+
+      <div class="hidden-xs hidden-sm" id="floating-profile" style="display: none;">
+        <div class="row">
+          
+          <div class="col-lg-2 col-md-3">
+            <img class="gravatar" src="3.installation-kubernetes%28multi-nodes%29_files/2596a208240dacdc2397c48626020c46.png" alt="" width="40" height="40">
+          </div>
+          
+          <div class="col-lg-10 col-md-9">
+            <h2>
+              <a href="https://devops.profitbricks.com/users/profile/baldwin">
+                
+                  Matt Baldwin
+                
+              </a>
+            </h2>
+            Feb 18, 2015
+          </div> <!-- /col -->
+        </div><!-- /row -->
+      </div> <!-- /floating-profile container -->
+      
+    </div> <!-- /row -->
+  </section> <!-- /container -->
+
+  </div> <!-- /wrapper-col-12 -->
+</div> <!-- /row -->
+</section> <!-- /banner fluid-container -->
+
+<!-- set the layout back up -->
+<div class="container">
+  <div class="row">
+  
+  <div class="col-md-1 hidden-xs">
+    <div id="floating-comment" style="margin-top: 149px; display: none;" class="">
+      <a href="#">
+        <i class="fa fa-comments-o"></i>
+      </a>
+    </div>
+
+    <div id="floating-top" style="display: none;" class="">
+      <a href="#">
+        <i class="fa fa-angle-up"></i>
+      </a>
+    </div>
+  </div> <!-- /col -->
+  
+  <div class="col-md-10">
+
+  <!-- TUTORIAL METADATA -->
+  <!-- AUTHOR information / metadata -->
+  <div class="row metadata">
+    <div class="col-md-9 col-xs-6">
+      <label>by 
+      <a href="https://devops.profitbricks.com/users/profile/baldwin">
+        baldwin
+      </a>
+      on <span>Feb 18, 2015</span>
+
+      <span id="views" class="hide">40081</span>
+
+      </label> 
+    </div> <!-- /col -->
+    <div class="col-md-3 col-xs-6 text-right">
+      <label><i class="fa fa-stop Advanced"></i>&nbsp;
+        <span>Advanced</span>
+      </label>
+    </div> <!-- /complexity col -->
+  </div> <!-- /author row -->
+
+  <!-- TUTORIAL BODY -->
+  <article class="tutorial-body">
+    <p></p><h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#virtual-datacenter-setup">Virtual DataCenter Setup</a></li>
+<li><a href="#component-installation">Component Installation</a></li>
+<li><a href="#configure-kubernetes-hosts">Configure Kubernetes Hosts</a></li>
+<li><a href="#configure-kubernetes-master">Configure Kubernetes Master</a></li>
+<li><a href="#configure-kubernetes-node">Configure Kubernetes Node</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This guide will take you through the manual process for getting 
+started with a multi-node Kubernetes cluster on Ubuntu at ProfitBricks. 
+The setup will have one master and one minion to keep it simple. In a 
+future article we will walk you through how to setup a Kubernetes 
+cluster between different vDCs, which require you to use a network 
+overlay like Flannel. This article is meant to get you familiar with the
+ manual process for setting up Kubernetes. </p>
+
+<p>This guide is loosely based on the one provided by Google for Fedora.
+ We also make use of the scripts provided in the project for setting up 
+singe-server Ubuntu installs. </p>
+
+<h2 id="virtual-datacenter-setup">Virtual DataCenter Setup</h2>
+
+<p>The first step on your road to a Kubernetes cluster is to start by 
+creating a new vDC using either the ProfitBricks CLI, API, or DCD R2. </p>
+
+<p>Once the vDC is created add two <em>Composite Instances</em> and one <em>Internet Access</em>. You will connect both instances to the <em>Internet Access</em> object. This will give you public connectivity. You will then need to create a <strong>private</strong> LAN between the two servers. </p>
+
+<p>We're using the below configuration values: </p>
+
+<pre><code>| Hostname    | Private IP  |
+| kube-master | 10.11.50.12 |
+| kube-minion | 10.11.50.11 |
+</code></pre>
+
+<p>The following specs are used for both instances: </p>
+
+<pre><code>| Property | Value  |
+| Cores    | 2      |
+| RAM      | 2      |
+| Size     | 50 GB  |
+| LAN      | No LAN |
+</code></pre>
+
+<p>It should look like this: </p>
+
+<p><img src="3.installation-kubernetes%28multi-nodes%29_files/screen01.png" alt=""></p>
+
+<p>The first instance will be our Kubernetes master.</p>
+
+<p>The second instance will be our first Kubernetes minion.</p>
+
+<p>You will need to following the steps on installing the pre-requisites and Kubernetes on both your master and minion instances. </p>
+
+<h2 id="component-installation">Component Installation</h2>
+
+<p>Kubernetes has a few requirements, but not many and they're slowly 
+baking these into the installation process. Ubuntu, however, has some 
+pre-requisites it needs before you can move forward with installing and 
+setting up Kubernetes.</p>
+
+<p>You will want to run the following commands in the order laid out in 
+this tutorial. These are broken into sections, but these can be combined
+ into a single shell script if you're feeling energetic. </p>
+
+<h3 id="install-docker">Install Docker</h3>
+
+<p>First, you need Docker on both the master and its nodes. These 
+commands come from Docker's site and ensure you're working with the most
+ recent version. By default, using <code>apt-get</code> to install 
+docker will give you version 1.0.1, which is not ideal for what we want 
+to do. Docker recommends running the following to ensure you have the 
+latest version on your Ubuntu installation:</p>
+
+<pre><code>apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+sh -c "echo deb https://get.docker.com/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list"
+apt-get update
+apt-get install -y lxc-docker git make
+source /etc/bash_completion.d/docker
+</code></pre>
+
+<p>We install <code>git</code> and <code>make</code> while we're at it, but that can be installed anywhere in the pre-requisite setup process. </p>
+
+<h3 id="install-etcd-20">Install <em>etcd 2.0</em></h3>
+
+<p>Next, let's go ahead and install <em>etcd 2.0</em> on your master; <em>etcd</em>
+ is not required on your Kubernetes nodes (minions). You could do this 
+after installing Kubernetes if desired, but, personally, I treat this as
+ a pre-requisite for Kubernetes and therefore it should come prior to 
+installing and configuring Kubernetes. </p>
+
+<pre><code>curl -L  https://github.com/coreos/etcd/releases/download/v2.0.0/etcd-v2.0.0-linux-amd64.tar.gz -o etcd-v2.0.0-linux-amd64.tar.gz
+tar xzvf etcd-v2.0.0-linux-amd64.tar.gz
+cd etcd-v2.0.0-linux-amd64
+mkdir /opt/bin
+cp etcd* /opt/bin
+</code></pre>
+
+<p>Now you're ready for Kubernetes. </p>
+
+<h3 id="build-kubernetes">Build Kubernetes</h3>
+
+<p>Do this on both your master and minion starting with the master. </p>
+
+<p>You can either install Kubernetes on Ubuntu using pre-existing 
+binaries or build from source. Since Kubernetes is rapidly iterating we 
+will be building from source in this tutorial which gives us all the 
+latest patches and improvements.</p>
+
+<p>You don't need to install Go since Kubernetes already has a Go build 
+process when it starts its setup. This was a legacy requirement that has
+ since been removed. </p>
+
+<p>You will want to perform the following commands on both the master and the minion:</p>
+
+<pre><code>git clone https://github.com/GoogleCloudPlatform/kubernetes.git
+cd kubernetes
+make release
+</code></pre>
+
+<p>The build process creates the folder <code>_output</code> in the root of your <code>kubernetes</code> folder. The release is:</p>
+
+<p><code>_output/release-tars/kubernetes-server-linux-amd64.tar.gz</code>. </p>
+
+<p>Extract this archive to a folder of your choosing. You will be copying binaries out of <code>/server/bin</code> into <code>/opt/bin</code> on your master and nodes in the next few sections.</p>
+
+<h2 id="configure-kubernetes-hosts">Configure Kubernetes Hosts</h2>
+
+<p>You will now need to configure your <em>kube-master</em> and <em>kube-minion</em>. First, prepare the <em>hosts</em> file so that both can resolve each other via their hostnames. </p>
+
+<pre><code>echo "10.11.50.12 kube-master
+10.11.50.11  kube-minion" &gt;&gt; /etc/hosts
+</code></pre>
+
+<h2 id="configure-kubernetes-master">Configure Kubernetes Master</h2>
+
+<p>Your <em>kube-master</em> will run the services: </p>
+
+<ul>
+<li>etcd</li>
+<li>kube-apiserver</li>
+<li>kube-controller-manager</li>
+<li>kube-scheduler</li>
+</ul>
+
+<p>Before configuring the master you will need to copy all configuration
+ and binary files into their appropriate locations. You will need to 
+extract the binaries from the release tar (noted above). This contains 
+the <code>/server/bin</code> folder referenced in the next commands:</p>
+
+<pre><code>cp server/bin/kube-apiserver /opt/bin/
+cp server/bin/kube-controller-manager /opt/bin/
+cp server/bin/kube-kube-scheduler /opt/bin/
+cp server/bin/kubecfg /opt/bin/
+cp server/bin/kubectl /opt/bin/
+cp server/bin/kubernetes /opt/bin/
+</code></pre>
+
+<p>Now, return to the directory you built Kubernetes: </p>
+
+<pre><code>cp kubernetes/cluster/ubuntu/init_conf/kube-apiserver.conf /etc/init/
+cp kubernetes/cluster/ubuntu/init_conf/kube-controller-manager.conf /etc/init/
+cp kubernetes/cluster/ubuntu/init_conf/kube-kube-scheduler.conf /etc/init/
+
+cp kubernetes/cluster/ubuntu/initd_scripts/kube-apiserver /etc/init.d/
+cp kubernetes/cluster/ubuntu/initd_scripts/kube-controller-manager /etc/init.d/
+cp kubernetes/cluster/ubuntu/initd_scripts/kube-kube-scheduler /etc/init.d/
+
+cp kubernetes/cluster/ubuntu/default_scripts/kubelet /etc/default/
+cp kubernetes/cluster/ubuntu/default_scripts/kube-proxy /etc/default/
+cp kubernetes/cluster/ubuntu/default_scripts/kubelet /etc/default/
+</code></pre>
+
+<h3 id="configure-the-etcd">Configure the <em>etcd</em></h3>
+
+<p>The default configuration should be updated to look like: </p>
+
+<pre><code>ETCD_OPTS="-listen-client-urls=http://kube-master:4001"
+</code></pre>
+
+<p>This should be done on <em>kube-master</em>. Your <em>kube-minion</em> will not be running <em>etcd</em>. </p>
+
+<h3 id="configure-kube-apiserver">Configure <em>kube-apiserver</em></h3>
+
+<p>On your <em>master</em> edit <code>/etc/default/kube-apiserver</code>. It should look something like this: </p>
+
+<pre><code>KUBE_APISERVER_OPTS="--address=0.0.0.0 \
+--port=8080 \
+--etcd_servers=http://kube-master:4001 \
+--portal_net=11.1.1.0/24 \
+--allow_privileged=false \
+--kubelet_port=10250 \
+--v=0"
+</code></pre>
+
+<h3 id="configure-kube-controller-manager">Configure <em>kube-controller-manager</em></h3>
+
+<p>Configure the controller manager by editing <code>/etc/default/kube-controller-manager</code> to look like this: </p>
+
+<pre><code>KUBE_CONTROLLER_MANAGER_OPTS="--address=0.0.0.0 \
+--master=127.0.0.1:8080 \
+--machines=kube-minion \
+--v=0"
+</code></pre>
+
+<h3 id="configure-kube-scheduler">Configure <em>kube-scheduler</em></h3>
+
+<p>You will want to update the <em>kube-scheduler</em> configuration file to resemble this: </p>
+
+<pre><code>KUBE_SCHEDULER_OPTS="--address=0.0.0.0 \
+--master=127.0.0.1:8080 \
+--v=0"
+</code></pre>
+
+<p>Now, bring up the master. </p>
+
+<pre><code>service docker restart
+</code></pre>
+
+<h3 id="validate-master-services">Validate Master Services</h3>
+
+<p>You can validate that the services are running on the <em>master</em> by running the command: </p>
+
+<pre><code>initctl list | grep -E '(kube|etc)'
+</code></pre>
+
+<p>You should see the services in a running state with a PID. If not, then the logs should be in <code>/var/log/upstart/</code>.</p>
+
+<h2 id="configure-kubernetes-node">Configure Kubernetes Node</h2>
+
+<p>Your <em>kube-minion</em> will run the services: </p>
+
+<ul>
+<li>kubelet</li>
+<li>kube-proxy</li>
+</ul>
+
+<p>First, start by copying the binaries each node will require: </p>
+
+<pre><code>cp server/bin/kubelet /opt/bin/
+cp server/bin/kube-proxy /opt/bin/
+cp server/bin/kubecfg /opt/bin/
+cp server/bin/kubectl /opt/bin/
+cp server/bin/kubernetes /opt/bin/
+</code></pre>
+
+<p>You will want to copy the following files from the Kubernetes project to their appropriate locations:</p>
+
+<pre><code>cp kubernetes/cluster/ubuntu/init_conf/kubelet.conf /etc/init/
+cp kubernetes/cluster/ubuntu/init_conf/kube-proxy.conf /etc/init/
+
+cp kubernetes/cluster/ubuntu/initd_scripts/kubelet /etc/init.d/
+cp kubernetes/cluster/ubuntu/initd_scripts/kube-proxy /etc/init.d/
+
+cp kubernetes/cluster/ubuntu/default_scripts/kubelet /etc/default/
+cp kubernetes/cluster/ubuntu/default_scripts/kube-proxy /etc/default/
+</code></pre>
+
+<p>You will not be running <em>etcd</em> on <em>kube-minion</em>. Unfortunateyl, the init and configuration files in the Kubernetes <em>/cluster/ubuntu</em> location were written for a single-server installation and are configured to start the Kubernetes services when the <em>etcd</em> service is started. This will require you to modify them. </p>
+
+<p>You will want to edit both <code>/etc/init/kubelet.conf</code> and <code>/etc/init/kube-proxy.conf</code>so that the lines: </p>
+
+<pre><code>start on started etcd
+stop on stopping etcd
+</code></pre>
+
+<p>are updated to look like this: </p>
+
+<pre><code>start on started docker
+stop on stopping docker
+</code></pre>
+
+<h3 id="configure-kubelet">Configure <em>kubelet</em></h3>
+
+<p>Your <em>kubelet</em> configuration will need to look something like this: </p>
+
+<pre><code>KUBELET_OPTS="--address=0.0.0.0 \
+--port=10250 \
+--hostname_override=kube-minion \
+--etcd_servers=http://kube-master:4001 \
+--enable_server=true
+--v=0"
+</code></pre>
+
+<p><code>--v=0</code> turns on debug. This is handy while you're 
+learning way around, but you'll probably want to turn this down a bit 
+before going into production. </p>
+
+<h3 id="configure-kube-proxy">Configure <em>kube-proxy</em></h3>
+
+<p>Configure your proxy </p>
+
+<pre><code>KUBE_PROXY_OPTS="--etcd_servers=http://kube-master:4001 \
+--v=0"
+</code></pre>
+
+<p>Finally, restart services on your Kubernetes node:</p>
+
+<pre><code>service docker restart
+</code></pre>
+
+<p>You can validate the service are running on the node by doing: </p>
+
+<pre><code>initctl list | grep -E '(docker|kube)'
+</code></pre>
+
+<p>They should both report as running with a PID. </p>
+
+<h3 id="validate-node-services">Validate Node Services</h3>
+
+<p>You can validate that the services are running on the <em>node</em> by running the command: </p>
+
+<pre><code>initctl list | grep -E '(kube|docker)'
+</code></pre>
+
+<p>You should see the services in a running state with a PID. If not, then the logs should be in <code>/var/log/upstart/</code>. This applies to both the master and node. </p>
+
+<h3 id="view-nodes">View Nodes</h3>
+
+<p>You should also be able to view your nodes / minions. Run this from master: </p>
+
+<pre><code>/opt/bin/kubectl get minions
+</code></pre>
+
+<p>This should output:</p>
+
+<pre><code>NAME                LABELS              STATUS
+kube-minion         &lt;none&gt;              Ready
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This tutorial should have you up and running with a single master and
+ single minion setup on Ubuntu 14.04. We will cover how to setup 
+multiple minions in a future article. So, stay tuned. </p><p></p>
+  </article>
+
+  <!-- SOCIAL Buttons -->
+  <div class="buttons-social">
+
+    <div class="share-button sharer-0" style="display: block;"><label class="entypo-export"><span>Share</span></label><div class="social load top center networks-4"><ul><li class="entypo-pinterest" data-network="pinterest"></li><li class="entypo-twitter" data-network="twitter"></li><li class="entypo-facebook" data-network="facebook"></li><li class="entypo-gplus" data-network="google_plus"></li><li class="entypo-paper-plane" data-network="email"></li></ul></div></div>
+    
+    <div class="subscribe-button sharer-0">
+      
+        <a href="https://devops.profitbricks.com/tutorials/getting-started-with-a-multi-node-kubernetes-cluster-on-ubuntu/subscribe/" class="btn btn-primary btn-lg">
+          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+          <span>Subscribe</span>
+        </a>
+      
+    </div> <!-- /subscribe-button -->
+
+  </div> <!-- /buttons-social -->
+
+  <!-- METADATA footer -->
+  <div class="row metadata-footer">
+    
+    <!-- author -->
+    <div class="col-md-6"> 
+      <div class="row">
+        <div class="col-lg-2 col-md-3">
+          <img class="gravatar" src="3.installation-kubernetes%28multi-nodes%29_files/2596a208240dacdc2397c48626020c46_003.png" alt="" width="65" height="65">
+        </div>
+        <div class="col-lg-10 col-md-9">
+          <p>author:</p>
+          <h2><a href="https://devops.profitbricks.com/users/profile/baldwin">
+            
+              Matt Baldwin
+            
+          </a></h2>
+        </div>
+      </div>
+    </div> <!-- /col  /author -->
+    
+    <div class="col-md-6">
+      <!-- date -->
+      <i class="fa fa-calendar-o"></i>
+      
+        Feb 18, 2015 
+      
+
+      <br>
+
+      <!-- tags -->
+      <i class="fa fa-tag"></i>
+       
+        <a href="https://devops.profitbricks.com/tutorials/tags/Docker" class="tag">Docker</a>
+        ,
+       
+        <a href="https://devops.profitbricks.com/tutorials/tags/Kubernetes" class="tag">Kubernetes</a>
+        ,
+       
+        <a href="https://devops.profitbricks.com/tutorials/tags/Ubuntu" class="tag">Ubuntu</a>
+        
+      
+
+    </div> <!-- /col  -->
+    <!-- <label id="views"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;
+      40081
+    </label> -->
+
+
+</div> <!-- /col -->
+</div> <!-- /row -->
+
+
+
+<!-- PAGE BOTTOM -->
+<!-- break out of the layout -->
+  </div> <!-- /content-header -->
+</div> <!-- /row -->
+ <!-- /container -->
+
+<!-- RELATED CONTENT -->
+<section class="fluid-container">
+  <div class="row related-content">
+
+    <!-- title goes here: -->
+    <section class="container">
+      <div class="row">
+
+          <div class="col-md-4 col-md-offset-2">
+            <h2>Related Tutorials</h2>
+            <div id="related_tutorials"><ul><li><a href="https://devops.profitbricks.com/tutorials/deploy-a-multi-node-kubernetes-cluster-on-centos-7/" title="Deploy a Multi-node Kubernetes Cluster on CentOS 7 with Docker and Flannel - learn more at the ProfitBricks DevOps Central Community">Deploy a Multi-node Kubernetes Cluster on CentOS 7</a></li><li><a href="https://devops.profitbricks.com/tutorials/setup-docker-on-ubuntu-at-profitbricks/" title="Setting up Docker on Ubuntu at ProfitBricks - learn more at the ProfitBricks DevOps Central Community">Setup Docker on Ubuntu at ProfitBricks</a></li><li><a href="https://devops.profitbricks.com/tutorials/setting-up-docker-registry-20-using-cloud-storage/" title="Setting Up Docker Registry 2.0 Using Cloud Storage - learn more at the ProfitBricks DevOps Central Community">Setting Up Docker Registry 2.0 Using Cloud Storage</a></li><li><a href="https://devops.profitbricks.com/tutorials/setup-skydns-on-a-kubernetes-cluster/" title="Setup SkyDNS on a Kubernetes Cluster - learn more at the ProfitBricks DevOps Central Community">Setup SkyDNS on a Kubernetes Cluster</a></li><li><a href="https://devops.profitbricks.com/tutorials/devops-central-community-members-docker-hosting-early-access-invitation-code-dt63ka/" title="Docker Management Portal - learn more at the ProfitBricks DevOps Central Community">DevOps Central community members, Docker Hosting Early Access - Invitation Code "Dt63ka"</a></li></ul></div>
+          </div>
+          
+          <div class="col-md-4">
+            <h2>Popular Tutorials</h2>
+            <div id="popular_tutorials"><ul><li><a href="https://devops.profitbricks.com/tutorials/install-mysql-on-centos-7/" title="A how-to on installing MySQL on CentOS - learn more at the ProfitBricks DevOps Central Community">Install MySQL on CentOS 7</a></li><li><a href="https://devops.profitbricks.com/tutorials/install-python-3-on-centos-7/" title="Install Python 3 in CentOS or Red Hat Enterprise Linux from Software Collections (SCL) - learn more at the ProfitBricks DevOps Central Community">Install Python 3 on CentOS 7</a></li><li><a href="https://devops.profitbricks.com/tutorials/configure-a-sql-2014-alwayson-availability-group-cluster/" title="Setting up an AlwaysOn SQL 2014 Cluster with ProfitBricks. - learn more at the ProfitBricks DevOps Central Community">Configure a SQL 2014 AlwaysOn Availability Group Cluster</a></li><li><a href="https://devops.profitbricks.com/tutorials/use-ssh-keys-with-putty-on-windows/" title="Setting up SSH keys with PuTTY on Windows. - learn more at the ProfitBricks DevOps Central Community">Use SSH Keys with PuTTY on Windows</a></li><li><a href="https://devops.profitbricks.com/tutorials/creating-a-mongodb-docker-container-with-an-attached-storage-volume/" title="Setting up MongoDB as a Docker container using an external ProfitBricks storage volume. - learn more at the ProfitBricks DevOps Central Community">Creating a MongoDB Docker Container with an Attached Storage Volume</a></li></ul></div>
+          </div>
+
+      </div> <!-- /row -->
+    </section> <!-- /container -->
+
+  </div> <!-- /related-content -->
+
+  <!-- COMMENTS -->
+  <div class="row tutorial-comments">
+
+  <section class="container">
+    <div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="comments">
+      <!-- Hides div if no question comment exists -->
+      
+        <ul class="comment-list">
+          
+          <input id="54fd985b66100bad6d580dea_id_tutorial_flag" name="tutorial_flag" value="54e513e266100bf609b31562" type="hidden">
+          <input id="54fd985b66100bad6d580dea_id_comment_flag" name="comment_flag" value="54fd985b66100bad6d580dea" type="hidden">
+          <input id="54fd985b66100bad6d580dea_id_flag_type" name="flag_type" value="tutorial_comment" type="hidden">
+
+          
+
+
+
+<li>
+  <div class="row">
+    <div class="col-md-1 comment-avatar">
+      <img class="gravatar" src="3.installation-kubernetes%28multi-nodes%29_files/88efb69b227a1340b99ae3eac74a9de7.jpg" alt="" width="50" height="50">
+    </div>
+    <div class="col-md-10 comment-content">
+      <div class="comment-metadata">
+        <a href="https://devops.profitbricks.com/users/profile/scuxiayiqian/">
+        scuxiayiqian</a> 
+        on <span>Mar 09, 2015</span> commented, 
+      </div> <!-- /comment-metadata -->
+      
+      <div class="comment-body">          
+        <p>I have a master (192.168.1.150) and a slave (192.168.1.151). Following your tutorial, my output likes this:</p>
+<p>NAME   LABELS   STATUS </p>
+<p>slave1   none        NotReady</p>
+<p>Could you help me find where the problem is? 
+And btw from kubernetes's official doc, minion should also run the etcd. Why do you say that it do not need to run etcd?</p>
+      </div> <!-- /comment-body -->
+
+      <div class="comment-actions">
+        
+        
+        
+        
+        
+        
+
+        
+        
+
+      </div> <!-- /comment-actions -->
+    </div> <!-- /comment-content -->
+  </div> <!-- /row -->
+</li>
+
+    
+          
+          <input id="54fdfa3666100bad6d580deb_id_tutorial_flag" name="tutorial_flag" value="54e513e266100bf609b31562" type="hidden">
+          <input id="54fdfa3666100bad6d580deb_id_comment_flag" name="comment_flag" value="54fdfa3666100bad6d580deb" type="hidden">
+          <input id="54fdfa3666100bad6d580deb_id_flag_type" name="flag_type" value="tutorial_comment" type="hidden">
+
+          
+
+
+
+<li>
+  <div class="row">
+    <div class="col-md-1 comment-avatar">
+      <img class="gravatar" src="3.installation-kubernetes%28multi-nodes%29_files/107d0123632bb9c2dfac1597bdb54d13.jpg" alt="" width="50" height="50">
+    </div>
+    <div class="col-md-10 comment-content">
+      <div class="comment-metadata">
+        <a href="https://devops.profitbricks.com/users/profile/murty.intent/">
+        murty.intent</a> 
+        on <span>Mar 09, 2015</span> commented, 
+      </div> <!-- /comment-metadata -->
+      
+      <div class="comment-body">          
+        <p>Really helpful article. Thank you Baldwin. </p>
+      </div> <!-- /comment-body -->
+
+      <div class="comment-actions">
+        
+        
+        
+        
+        
+        
+
+        
+        
+
+      </div> <!-- /comment-actions -->
+    </div> <!-- /comment-content -->
+  </div> <!-- /row -->
+</li>
+
+    
+          
+          <input id="54fdfbd866100bad69580dea_id_tutorial_flag" name="tutorial_flag" value="54e513e266100bf609b31562" type="hidden">
+          <input id="54fdfbd866100bad69580dea_id_comment_flag" name="comment_flag" value="54fdfbd866100bad69580dea" type="hidden">
+          <input id="54fdfbd866100bad69580dea_id_flag_type" name="flag_type" value="tutorial_comment" type="hidden">
+
+          
+
+
+
+<li>
+  <div class="row">
+    <div class="col-md-1 comment-avatar">
+      <img class="gravatar" src="3.installation-kubernetes%28multi-nodes%29_files/107d0123632bb9c2dfac1597bdb54d13.jpg" alt="" width="50" height="50">
+    </div>
+    <div class="col-md-10 comment-content">
+      <div class="comment-metadata">
+        <a href="https://devops.profitbricks.com/users/profile/murty.intent/">
+        murty.intent</a> 
+        on <span>Mar 09, 2015</span> commented, 
+      </div> <!-- /comment-metadata -->
+      
+      <div class="comment-body">          
+        <p>Hi scuxiayiqian,</p>
+<pre><code> I also ran into the issue where minion (slave) got into NotReady state.In my case issue was with the docker version being used.  Check if this helps.
+</code></pre>
+<p>I found the issue by tailing the logs of kubelet in /tmp. I upgraded 
+my docker using to 1.5.x  and minion quickly got into ready state. 
+  I upgraded my docker by using these commands    
+http://askubuntu.com/questions/472412/how-do-i-upgrade-docker</p>
+<p>(Im on ubuntu ...)
+ sudo add-apt-repository ppa:docker-maint/testing
+sudo apt-get update
+sudo apt-get install docker.io</p>
+      </div> <!-- /comment-body -->
+
+      <div class="comment-actions">
+        
+        
+        
+        
+        
+        
+
+        
+        
+
+      </div> <!-- /comment-actions -->
+    </div> <!-- /comment-content -->
+  </div> <!-- /row -->
+</li>
+
+    
+          
+          <input id="54ff2c5e66100bad6e580dee_id_tutorial_flag" name="tutorial_flag" value="54e513e266100bf609b31562" type="hidden">
+          <input id="54ff2c5e66100bad6e580dee_id_comment_flag" name="comment_flag" value="54ff2c5e66100bad6e580dee" type="hidden">
+          <input id="54ff2c5e66100bad6e580dee_id_flag_type" name="flag_type" value="tutorial_comment" type="hidden">
+
+          
+
+
+
+<li>
+  <div class="row">
+    <div class="col-md-1 comment-avatar">
+      <img class="gravatar" src="3.installation-kubernetes%28multi-nodes%29_files/2596a208240dacdc2397c48626020c46_002.png" alt="" width="50" height="50">
+    </div>
+    <div class="col-md-10 comment-content">
+      <div class="comment-metadata">
+        <a href="https://devops.profitbricks.com/users/profile/baldwin/">
+        baldwin</a> 
+        on <span>Mar 10, 2015</span> commented, 
+      </div> <!-- /comment-metadata -->
+      
+      <div class="comment-body">          
+        <p>@scuxiayiqian Kubernetes is still very early, but in looking 
+at other documents for other distributions I didn't see a clear 
+rationale for having etcd also hosted on the nodes themselves. That 
+needs to be either a service hosted on the master(s) or on its own 
+server. I imagine breaking these services into dedicated components 
+would be dictated by the size of cluster you wish to build. </p>
+<p>@murty.intent Thanks :) </p>
+      </div> <!-- /comment-body -->
+
+      <div class="comment-actions">
+        
+        
+        
+        
+        
+        
+
+        
+        
+
+      </div> <!-- /comment-actions -->
+    </div> <!-- /comment-content -->
+  </div> <!-- /row -->
+</li>
+
+    
+          
+        </ul>
+      
+
+  
+      <a href="https://devops.profitbricks.com/users/login/?next=/tutorials/getting-started-with-a-multi-node-kubernetes-cluster-on-ubuntu/" class="btn btn-info btn-lg">Log In, Add a Comment</a> 
+  
+
+  
+
+    </div> <!-- /comments -->
+    </div> <!-- /col -->
+    </div> <!-- /row -->
+    </section> <!-- /container -->
+    </div> <!-- tutorial-comments -->
+
+</section>
+
+ <!-- /col -->
+ <!-- /row -->
+
+   <!-- /col -->
+   <!-- /row -->
+   <!-- /container -->
+
+  <div class="container-fluid">
+  <footer>
+    <div class="row support">
+<div class="col-md-6 col-sm-6 text-right">
+	<p>Free 24/7 Support</p>
+</div> <!-- /col -->
+<div class="col-md-6">
+	<address>
+		+1-866-936-0764<br>
+		<a href="mailto:support-us@profitbricks.com">support-us@profitbricks.com</a>
+	</address>
+</div> <!-- /col -->
+</div> <!-- /row -->
+
+<div class="container">
+<div class="row meta">
+	<div class="col-md-6 col-sm-6">
+	 <a href="https://my.profitbricks.com/dashboard/dcdr2/?region=us&amp;lang=en" target="_blank">DCD Login</a> · <a href="https://devops.profitbricks.com/feedback">Feedback</a> · <a href="https://www.profitbricks.com/help/Main_Page" target="_blank">Support</a>
+	</div> <!-- /col -->
+	<div class="col-md-6 text-right">
+	© 2015 - 2016 · <a href="http://www.profitbricks.com/terms-and-conditions" target="_blank">Terms &amp; Conditions</a> · <a href="http://www.profitbricks.com/privacy-statement" target="_blank">Privacy Statement</a>
+	
+	</div> <!-- /col -->
+
+</div> <!-- /row -->
+</div> <!-- /container -->
+  </footer>
+  </div>
+
+    <script src="3.installation-kubernetes%28multi-nodes%29_files/jquery.js"></script>
+    <script src="3.installation-kubernetes%28multi-nodes%29_files/bootstrap.js"></script>
+    <script type="text/javascript">
+    site_settings = {
+      ES_HOST:'devops.profitbricks.com',
+      ES_PORT:'443',
+      ES_PROTO:'https',
+      ES_PATH:'/es'
+    };
+    </script>
+    <script src="3.installation-kubernetes%28multi-nodes%29_files/app.js"></script>
+    <script src="3.installation-kubernetes%28multi-nodes%29_files/dropzone.js"></script>
+    <script src="3.installation-kubernetes%28multi-nodes%29_files/uploader.js"></script>
+    
+  <script src="3.installation-kubernetes%28multi-nodes%29_files/share.js"></script>
+  <script type="text/javascript">
+  config = {
+    ui: {
+      flyout: 'top center'
+      // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
+    },
+    networks: {
+      facebook: {
+        enabled: true// Enable Facebook. [Default: true]
+      },
+      pinterest: {
+        enabled: false
+      }
+    }
+  };
+
+  var share = new Share('.share-button', config);
+</script>
+
+<style type="text/css">
+  /* styling the share button - changing the email icon on share-button */
+  .share-button.sharer-0 [class*=entypo-]:before {font-family: FontAwesome, entypo,sans-serif;}
+  .entypo-export:before{content: "\f1e0 \0000a0"}
+  .entypo-paper-plane:before {content: "\f003";}
+</style>
+
+  <script type="text/javascript">
+    $(function() {
+      var navbarOffset = $(".navbar").height() + 30;
+      var shiftWindow = function() { scrollBy(0, -navbarOffset); };
+      window.addEventListener("hashchange", shiftWindow);
+      if (window.location.hash) shiftWindow();
+    });
+  </script>
+  <script type="text/javascript">
+    $( "#tutorials-nav" ).addClass( "active" );
+    $( 'a[name=remove-content-button]').removeClass('remove-content').addClass('remove-tutorial-content').attr('value','tutorial_comment');
+  </script>
+  <script type="text/javascript" src="3.installation-kubernetes%28multi-nodes%29_files/tutorials.js"></script>
+  <script type="text/javascript" src="3.installation-kubernetes%28multi-nodes%29_files/floating.js"></script>
+  <script type="text/javascript" src="3.installation-kubernetes%28multi-nodes%29_files/editor.js"></script>
+  <script type="text/javascript" src="3.installation-kubernetes%28multi-nodes%29_files/related-popular_content.js"></script>
+
+
+  
+
+    <script type="text/javascript">
+$(document).ready(function () {
+  $.ajax({
+    url: '//munchkin.marketo.net/munchkin.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+    Munchkin.init('035-MXN-498');
+    }
+  });
+})
+</script>
+
+    <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+var devops=/devops.profitbricks.com/
+
+if (devops.test(window.location.hostname))
+{ 
+ga('create', 'UA-44474328-7', 'auto');
+ga('send', 'pageview');
+}
+</script>
+
+
+<script id="vrfy">
+	var vrfy='b2d7f14c5810c3ee6b519c317297190e'
+</script>		
+
+</body></html>

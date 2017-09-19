@@ -1,0 +1,72 @@
+# ubuntu 16.04
+# dependencies installation
+
+=======================================
+
+1) must run as root user
+2) must have docker version compatible with kubernet version
+3) copy id_rsa.pub to authorized_keys under /root/.ssh for installation purpose
+4) web ui : <<ip-address>>:8080/ui
+
+=======================================
+
+apt-get update && apt-get -y upgrade
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+apt-get install -y python-software-properties software-properties-common
+add-apt-repository -y ppa:webupd8team/java 
+apt-get -y update 
+apt-get install -y nano wget unzip locate oracle-java8-installer 
+update-java-alternatives --set java-8-oracle
+apt-get install oracle-java8-set-default && java -version
+java -version
+nano /etc/profile
+apt-get purge docker-ce
+rm -rf /var/lib/docker
+apt-get purge docker-compose
+apt-get update && apt-get install -y apt-transport-https
+apt-get install -y docker.io
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl 
+ls
+sudo mv ./kubectl /usr/local/bin/kubectl 
+apt-get update && apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+ deb http://apt.kubernetes.io/ kubernetes-xenial main
+ EOF
+
+
+
+# kubernetes installation
+
+apt-get update
+apt-get install -y kubelet kubeadm
+kubeadm init
+export kubever=$(kubectl version | base64 | tr -d '\n')
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+kubectl get pods --all-namespaces
+kubectl get nodes
+kubectl taint nodes --all node-role.kubernetes.io/master-
+kubectl get nodes
+docker ps
+sync && echo 3 > /proc/sys/vm/drop_caches 
+kubectl get nodes
+kubectl get deployment 
+kubectl get rc
+kubectl get services
+kubectl get --help
+
+
+# dashboard installation
+
+nano dashboard.yaml
+kubectl create -f dashboard.yaml 
+kubectl delete deployment kubernetes-dashboard --namespace=kube-system
+kubectl delete prod kubernetes-dashboard --namespace=kube-system
+kubectl delete service kubernetes-dashboard --namespace=kube-system
+kubectl get pods --all-namespaces
+kubectl get services -a -o wide --all-namespaces
+kubectl get pods -a -o wide --all-namespaces
+kubectl get rc -a -o wide --all-namespaces
+kubectl get --help
