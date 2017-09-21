@@ -44,6 +44,7 @@ apt-get update
 apt-get install -y kubelet kubeadm
 kubeadm init
 export kubever=$(kubectl version | base64 | tr -d '\n')
+export KUBECONFIG=/etc/kubernetes/admin.conf
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
 kubectl get pods --all-namespaces
 kubectl get nodes
