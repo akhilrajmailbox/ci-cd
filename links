@@ -8,7 +8,7 @@ https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes
 installation >>
 https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/
 
-reference & exporting kubernet home >> 
+reference & exporting kubernet home
 https://www.weave.works/docs/tutorials/core/part-1-setup-troubleshooting/
 
 dashboard >>
@@ -29,9 +29,6 @@ https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/
 
 volume options :
 https://kubernetes.io/docs/concepts/storage/volumes/
-
-private registry pull authentication ::
-https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
 error-solution (incompatibility of versions of docker and kubernets) >>
 http://stackoverflow.com/questions/39005388/fail-to-run-docker-on-kubernetes
