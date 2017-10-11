@@ -141,7 +141,7 @@ spec:
       volumes:
         - 
           hostPath: 
-            path: mount-path
+            path: /vivasa/haproxy
           name: haproxy-cfg
 ---
 
