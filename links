@@ -1,3 +1,22 @@
+# manual installation consul
+https://www.consul.io/intro/getting-started/join.html
+
+# Service_name, Service_tag, Service_port..etc..
+https://gliderlabs.com/registrator/latest/user/services/#tags-and-attributes
+
+# Service discovery
+https://sreeninet.wordpress.com/2016/04/17/service-discovery-with-consul/
+
+=================================================================
+
+#json files ::
+
+https://github.com/mesosphere/marathon/issues/1328
+https://mesosphere.com/blog/2015/02/25/deploying-crate-on-mesos-with-marathon/
+
+
+=================================================================
+
 Registrator::
 https://gliderlabs.com/registrator/latest/user/quickstart/
 
