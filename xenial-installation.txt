@@ -1,3 +1,4 @@
+## java installation
 apt-get update && apt-get upgrade -y
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 apt-get install -y python-software-properties software-properties-common
@@ -14,7 +15,7 @@ echo $JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
 
-
+## mesos, marathon, zookeeper, mesosphere installtion
 apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
 DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
 CODENAME=$(lsb_release -cs)
@@ -32,7 +33,7 @@ apt-get -y update
 apt-get install mesosphere
 
 
-
+## mesos-master configuration
 nano /etc/mesos/zk
 nano /etc/zookeeper/conf/myid
 nano /etc/zookeeper/conf/zoo.cfg
@@ -46,7 +47,7 @@ cp /etc/marathon/conf/master /etc/marathon/conf/zk
 nano /etc/marathon/conf/zk
 
 
-
+## start the services 
 service zookeeper restart
 service mesos-master restart
 service marathon status
@@ -57,4 +58,20 @@ tailf /var/log/syslog
 journalctl -u marathon
 chmod -R 666 /etc/marathon/conf/
 /usr/bin/marathon --master zk://192.168.0.175:2181/mesos --zk zk://192.168.0.175:2181/marathon
+
+
+
+
+## mesos-slave configuration
+nano /etc/mesos/zk
+echo 192.168.0.175 | sudo tee /etc/mesos-slave/ip
+cp /etc/mesos-slave/ip /etc/mesos-slave/hostname
+echo 'docker,mesos' | sudo tee -a /etc/mesos-slave/containerizers
+echo 'ports(*):[4000-5000, 8000-9000, 31000-32000]' | sudo tee -a /etc/mesos-slave/resources
+echo '5mins' | sudo tee -a /etc/mesos-slave/executor_registration_timeout
+
+
+apt-get install curl
+curl -sSL https://get.docker.com/ | sh
+service mesos-slave start
 
