@@ -1,0 +1,60 @@
+apt-get update && apt-get upgrade -y
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+apt-get install -y python-software-properties software-properties-common
+add-apt-repository -y ppa:webupd8team/java
+apt-get -y update
+apt-get install -y nano wget unzip locate oracle-java8-installer
+update-java-alternatives --set java-8-oracle
+apt-get install oracle-java8-set-default && java -version
+nano /etc/profile
+apt-get update && apt-get upgrade -y
+apt-get install openssh-server
+nano /etc/profile
+echo $JAVA_HOME
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
+
+
+apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
+DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
+CODENAME=$(lsb_release -cs)
+echo "deb http://repos.mesosphere.io/${DISTRO} ${CODENAME} main" | sudo tee /etc/apt/sources.list.d/mesosphere.list
+apt-get -y update
+apt-get -y install mesos marathon
+apt-get -y install mesos marathon --fix-missing
+nano /etc/zookeeper/conf/myid 
+nano /etc/apt/sources.list.d/mesosphere.list 
+ >> deb http://repos.mesosphere.io/ubuntu trusty main
+
+
+
+apt-get -y update
+apt-get install mesosphere
+
+
+
+nano /etc/mesos/zk
+nano /etc/zookeeper/conf/myid
+nano /etc/zookeeper/conf/zoo.cfg
+nano /etc/mesos-master/quorum
+echo 192.168.0.175 | sudo tee /etc/mesos-master/ip
+cp /etc/mesos-master/ip /etc/mesos-master/hostname
+mkdir -p /etc/marathon/conf
+cp /etc/mesos-master/hostname /etc/marathon/conf
+cp /etc/mesos/zk /etc/marathon/conf/master
+cp /etc/marathon/conf/master /etc/marathon/conf/zk
+nano /etc/marathon/conf/zk
+
+
+
+service zookeeper restart
+service mesos-master restart
+service marathon status
+service marathon start
+netstat -tulpn | grep LISTEN
+service marathon status
+tailf /var/log/syslog
+journalctl -u marathon
+chmod -R 666 /etc/marathon/conf/
+/usr/bin/marathon --master zk://192.168.0.175:2181/mesos --zk zk://192.168.0.175:2181/marathon
+

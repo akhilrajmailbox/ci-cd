@@ -22,3 +22,17 @@ https://gliderlabs.com/registrator/latest/user/quickstart/
 
 marathon json creation::
 https://mesosphere.github.io/marathon/docs/rest-api.html
+
+
+
+=================================================================
+ubuntu-16.04 installation
+=================================================================
+
+http://www.bogotobogo.com/DevOps/DevOps_Mesos_Install.php
+http://www.admintome.com/blog/configuring-a-dcos-cluster-on-ubuntu-16-04/
+https://gist.github.com/EronWright/e9b542cd6b138a7d44f9a4af7af755f0
+
+marathon service start >>
+https://github.com/mesosphere/marathon/issues/4272
+/usr/bin/marathon --master zk://172.17.0.2:2181/mesos --zk zk://172.17.0.2:2181/marathon
