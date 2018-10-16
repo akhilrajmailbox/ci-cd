@@ -33,3 +33,25 @@ https://kubernetes.io/docs/concepts/storage/volumes/
 error-solution (incompatibility of versions of docker and kubernets) >>
 http://stackoverflow.com/questions/39005388/fail-to-run-docker-on-kubernetes
 
+
+
+
+*********************************************************************************
+Production things in kubernetes
+*********************************************************************************
+
+production :
+https://cloud.google.com/solutions/prep-kubernetes-engine-for-prod
+
+Cluster security :
+
+Complete production strategy :
+https://techbeacon.com/one-year-using-kubernetes-production-lessons-learned
+
+
+Google KMS :
+https://medium.com/google-cloud/using-google-cloud-platforms-cloud-key-management-service-kms-to-encrypt-decrypt-secrets-8ca7454a6b96
+
+https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster
+
+
