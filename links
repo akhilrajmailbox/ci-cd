@@ -18,3 +18,8 @@ multi-user-cred >> (role based strategy)
 https://stackoverflow.com/questions/8323129/jenkins-restrict-view-of-jobs-per-user
 
 http://www.kblearningacademy.com/configure-role-strategy-plugin-in-jenkins/
+
+
+Jenkins branch finding from console :
+https://stackoverflow.com/questions/14985563/how-to-retrieve-the-git-branch-name-that-was-built-by-jenkins-when-using-inverse
+# git show-ref | grep $(git rev-parse HEAD) | grep remotes | grep -v HEAD | sed -e 's/.*remotes.origin.//'
