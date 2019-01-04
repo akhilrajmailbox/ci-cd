@@ -1,0 +1,28 @@
+=======================================
+vpc
+Internet GW >> attach igw to vpc
+subnet (4)
+Nat GW
+route table  
+# public
+>> add route 
+1) add two public
+>> subnet association
+1) 0.0.0.0/0 > igw
+
+
+see the diagram >> vpn_subnet.png
+
+=======================================
+vpn subnet calculation ::
+http://www.vlsm-calc.net/
+
+=======================================
+workernode creation ::
+https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html
+
+=======================================
+ingress-controller ::
+https://aws.amazon.com/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/
+https://github.com/kubernetes-sigs/aws-alb-ingress-controller/blob/master/docs/guide/ingress/annotation.md
+=======================================
