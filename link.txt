@@ -1,0 +1,10 @@
+
+# rolling-update
+https://tachingchen.com/blog/kubernetes-rolling-update-with-deployment/
+https://stackoverflow.com/questions/38251325/kubernetes-deployment-not-doing-rolling-update
+
+# deployment-strategies
+https://container-solutions.com/kubernetes-deployment-strategies/
+https://www.cncf.io/wp-content/uploads/2018/03/CNCF-Presentation-Template-K8s-Deployment.pdf
+https://medium.com/@codefresh/continuous-deployment-strategies-with-kubernetes-c02323789a28
+https://kubernetes.io/blog/2018/04/30/zero-downtime-deployment-kubernetes-jenkins/
